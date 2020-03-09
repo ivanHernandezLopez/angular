@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UsersService } from '../services/users.service';
+import { LoginService } from '../services/login.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -13,10 +14,9 @@ export class LoginComponent implements OnInit {
 
   login: FormGroup;
 
-
   constructor(
     private router: Router,
-    private usersService: UsersService
+    private loginService: LoginService
   ) {
     this.login = new FormGroup({
       email: new FormControl(''),
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     const email = this.login.get('email').value;
     const password = this.login.get('password').value;
 
-    this.usersService.authentication(email, password)
+    this.loginService.authentication(email, password)
     .subscribe( success => this.router.navigate(['/dashboard']) );
 }
 

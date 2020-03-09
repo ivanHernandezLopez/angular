@@ -10,4 +10,4 @@ const appRoutes: Routes = [
     { path: '**', component: NotpagefoundComponent },
 ];
 
-export const APP_RUTES = RouterModule.forRoot(appRoutes , { useHash: true })
+export const APP_RUTES = RouterModule.forRoot(appRoutes , { useHash: true });

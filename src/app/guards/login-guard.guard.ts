@@ -13,7 +13,7 @@ export class LoginGuardGuard implements CanActivate {
     }
 
     canActivate(): boolean  {
-        if (localStorage.getItem('tokens')) {
+        if (localStorage.getItem('token')) {
             return true;
         } else {
             this.router.navigate(['/ingresar']);
